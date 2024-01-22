@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+
+class test1 extends StatefulWidget {
+  const test1({super.key});
+
+  @override
+  State<test1> createState() => _test1State();
+}
+
+class _test1State extends State<test1> {
+
+  int t=0,b=0,l=0,r=0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Color(0xff111359),
+        body:SingleChildScrollView(
+          child: Column(
+            children: [
+              for (var i = 0; i < 100; i++)
+
+                if(i<10)
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(width: 100+100+100,height: 50,decoration: BoxDecoration(
+                        color: Colors.white,borderRadius: BorderRadius.circular(11)
+                    ),
+                      child: Text('Item ${i+1}',style: TextStyle(color: Colors.black54),),),
+                  )
+                else
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(width: 100+100+100,height: 50,decoration: BoxDecoration(
+                        color: Colors.green,borderRadius: BorderRadius.circular(11)
+                    ),
+                      child: Text('Item ${i+1}',style: TextStyle(color: Colors.black54),),),
+                  )
+              //Text('Item $i',style: TextStyle(color: Colors.white),),
+            ],
+          ),
+        )
+    );
+  }
+
+}
